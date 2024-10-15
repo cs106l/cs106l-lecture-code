@@ -10,4 +10,4 @@ if(VIRTUAL_INHERITANCE)
     add_definitions(-DVIRTUAL_INHERITANCE)
 endif()
 
-add_executable(main main.cpp src/SectionLeader.cpp src/Employee.cpp src/Person.cpp src/Student.cpp)
+add_executable(main main.cpp src/SectionLeader.cpp src/Employee.cpp src/Person.cpp src/Student.cpp src/StudentID.cpp)
