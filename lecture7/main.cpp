@@ -12,7 +12,7 @@ void createStudentID() {
 
 void createSectionLeader() {
   SectionLeader sl{"Jacob Roberts-Baca", "6504417", "Computer Science", "Keith Schwarz", 2025, "01", "CS106B", 25};
-  std::cout << "Section Leader created: " << sl.getName() << ", for course " << sl.getCourse() << std::endl;
+  // std::cout << "Section Leader created: " << sl.getName() << ", for course " << sl.getCourse() << std::endl;
 }
 
 int main() {
