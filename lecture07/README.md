@@ -1,7 +1,8 @@
 # Lecture 7
 
-## StudentID
+You can take a look at the driver code in `main.cpp`. 
 
-## The Diamond Problem
-
-## CMAKE
+To run this you can use the following command:
+```sh
+g++ -std=c++20 main.cpp StudentID.cpp -o main
+```
