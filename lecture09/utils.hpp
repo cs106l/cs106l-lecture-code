@@ -18,7 +18,7 @@
 namespace demangling
 {
 
-  static std::optional<std::string> execute(const std::string &command)
+  static std::optional<std::string> execute(const std::string &command, int* exit_status = nullptr)
   {
     std::string result;
 
@@ -31,6 +31,7 @@ namespace demangling
       result += buffer;
     }
     int status = pclose(pipe);
+    if (exit_status) *exit_status = status;
     if (status != 0)
       return std::nullopt;
 
@@ -44,7 +45,10 @@ namespace demangling
     if (available.has_value())
       return *available;
 
-    available = (system("which c++filt > /dev/null 2>&1") == 0);
+    int exec_status;
+    execute("c++filt --version", &exec_status);
+    available = (exec_status == 0);
+
     if (!available)
       std::cerr << "\033[33mWarning: c++filt could not be found, so type names will be mangled.\033[0m\n\n";
 
