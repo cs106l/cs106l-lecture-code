@@ -1,1 +1,4 @@
 build
+*.out
+main
+main.exe

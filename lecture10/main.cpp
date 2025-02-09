@@ -7,8 +7,6 @@
 #include <vector>
 #include <random>
 
-#include <string>
-
 #include "soundex.h"
 
 static const std::map<std::string, std::function<std::string(const std::string &)>> algorithms = {
@@ -119,9 +117,9 @@ int main(int argc, char *argv[])
   // Read names from file
   auto names = readLines("names.txt");
 
-  // Randomly sample 5 names and print soundex output
+  // Randomly sample 10 names and print soundex output
   auto sample = sampleN(names, 5);
-  sample.insert(sample.begin(), "Roberts"); // Add my name for fun!
+  sample.push_back("Roberts-");
 
   for (const auto &algo : choices)
   {

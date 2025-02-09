@@ -4,6 +4,8 @@
 #include <iterator>
 #include <map>
 
+#include <iostream>
+
 static char soundexEncode(char c)
 {
   static const std::map<char, char> encoding = {
@@ -22,25 +24,26 @@ static bool notZero(char c)
 {
   return c != '0';
 }
-  
+
 std::string soundex(const std::string& s)
 {
-  char firstLetter = toupper(*std::find_if(s.begin(), s.end(), isalpha));
+  std::string letters;
+  std::copy_if(s.begin(), s.end(), std::back_inserter(letters), ::isalpha);
 
-  std::string nonLetters;
-  std::copy_if(s.begin(), s.end(), std::back_inserter(nonLetters), isalpha);
+  char first_letter = letters[0];
+  
+  std::transform(letters.begin(), letters.end(), letters.begin(), soundexEncode);
 
-  std::string encoded;
-  std::transform(nonLetters.begin(), nonLetters.end(), std::back_inserter(encoded), soundexEncode);
+  std::string unique;
+  std::unique_copy(letters.begin(), letters.end(), std::back_inserter(unique));
 
-  std::string noDups;
-  std::unique_copy(encoded.begin(), encoded.end(), std::back_inserter(noDups));
+  unique[0] = std::toupper(first_letter);
 
-  noDups[0] = firstLetter;
+  std::string no_zeros;
+  std::copy_if(unique.begin(), unique.end(), std::back_inserter(no_zeros), notZero);
 
-  std::string noZeros;
-  std::copy_if(noDups.begin(), noDups.end(), std::back_inserter(noZeros), notZero);
+  no_zeros += "0000";
+  return no_zeros.substr(0, 4);
 
-  noZeros += "0000";
-  return noZeros.substr(0, 4);
+  return s;
 }

@@ -8,7 +8,6 @@ int main() {
   Vector<int> vector;
   Vector<double> doubleVector;
   Vector<std::string> sv;
-  
 
   /* Push 106 onto the end of the vector 5 times */
   for (int i = 0; i < 5; i++) {

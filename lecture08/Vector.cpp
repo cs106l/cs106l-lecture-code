@@ -1,3 +1,10 @@
+/* Notice: there's no #include "Vector.h" here,
+ * so your IDE (e.g. VSCode) might not know about
+ * what a Vector<T> is. See the comment at the 
+ * bottom of "Vector.h" for more information about
+ * this. 
+ */
+
 #include <stdexcept>
 
 template <typename T>
@@ -17,8 +24,6 @@ Vector<T>::~Vector()
 template <typename T>
 void Vector<T>::resize()
 {
-  // Double the capacity of the vector
-
   auto newData = new T[_capacity * 2];
   for (size_t i = 0; i < _size; i++)
   {
@@ -70,22 +75,14 @@ bool Vector<T>::empty()
   return _size == 0;
 }
 
-/* Changed from lecture:
- * Some compilers (e.g. g++) will require that when returning a
- * type that depends on a template type (for example, iterator in this example)
- * that you preface the return type with `typename`.
- * 
- * There are on-going proposals to get rid of this requirement from the language,
- * but alas, here we are.
- */
 template <typename T>
-typename Vector<T>::iterator Vector<T>::begin()
+Vector<T>::iterator Vector<T>::begin()
 {
   return _data;
 }
 
 template <typename T>
-typename Vector<T>::iterator Vector<T>::end()
+Vector<T>::iterator Vector<T>::end()
 {
   return _data + _size;
 }

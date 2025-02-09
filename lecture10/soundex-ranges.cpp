@@ -3,7 +3,7 @@
 #include <algorithm>
 #include <iterator>
 #include <map>
-#include <ranges> 
+#include <ranges>
 
 static char soundexEncode(char c)
 {
@@ -29,8 +29,8 @@ std::string soundexRanges(const std::string& s)
 {
   namespace rv = std::ranges::views;
 
-  auto first = *std::ranges::find_if(s, isalpha);       // Get first letter 
-  auto v = s | rv::filter(isalpha) | rv::transform(soundexEncode);
+  auto first = *std::ranges::find_if(s, ::isalpha);       // Get first letter 
+  auto v = s | rv::filter(::isalpha) | rv::transform(soundexEncode);
 
   std::string encoded;
   std::ranges::unique_copy(v, std::back_inserter(encoded));
