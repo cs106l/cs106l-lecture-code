@@ -1,16 +1,10 @@
 #include <fstream>
 #include <iostream>
+#include <string>
 
 int main() {
-	/// associating file on construction
-	std::ofstream ofs("hello.txt");
-	if (ofs.is_open()) {
-		ofs << "Hello CS106L!" << '\n';
-    }
-    ofs.close();
-    ofs << "this will not get written";
-
-    ofs.open("hello.txt");
-    ofs << "this will though! It's open again";
-        return 0;
+  std::string x;
+  std::cin >> x;
+  std::cout << x << std::endl;
+  return 0;
 }

@@ -38,6 +38,7 @@ int& IntVector::at(size_t index)
 {
   if (index < 0 || index >= _size) {
     // Call std::out_of_range error
+    throw std::out_of_range("Out of range error");
   }
   else {
     return _data[index];

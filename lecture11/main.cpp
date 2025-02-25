@@ -9,5 +9,6 @@ int main() {
     } else {
         std::cout << fabio.getName() << " has a lower ID number than " << jacob.getName() << std::endl;
     }
+    auto result = jacob $ fabio;
     return 0;
 }
