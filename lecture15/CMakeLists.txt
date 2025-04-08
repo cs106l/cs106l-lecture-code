@@ -4,6 +4,8 @@ project(cs106l_classes)
 
 set(CMAKE_CXX_STANDARD 20)
 
-file(GLOB SRC_FILES "*.cpp")
+include_directories(include utils)
+
+file(GLOB SRC_FILES "src/*.cpp")
 
 add_executable(main ${SRC_FILES})
