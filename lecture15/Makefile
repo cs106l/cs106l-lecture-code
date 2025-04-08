@@ -5,12 +5,12 @@ CXX = g++
 CXXFLAGS = -std=c++20
 
 # Source files and target
-SRCS = $(wildcard *.cpp)
+SRCS = $(wildcard src/*.cpp)
 TARGET = main
 
 # Default target
 all:
-	$(CXX) $(CXXFLAGS) $(SRCS) -o $(TARGET)
+	$(CXX) $(CXXFLAGS) $(SRCS) -Iinclude -o $(TARGET)
 
 # Clean up
 clean:
