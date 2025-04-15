@@ -1,10 +1,6 @@
-#include <fstream>
 #include <iostream>
-#include <string>
 
 int main() {
-  std::string x;
-  std::cin >> x;
-  std::cout << x << std::endl;
+  std::cout << "Read the README and run the examples from lecture!" << std::endl;
   return 0;
 }
