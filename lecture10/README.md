@@ -1,20 +1,9 @@
-# Lecture 10: Functions and Lambdas
+# Lecture 8: Template Classes and Const Correctness
 
-> [!IMPORTANT]
-> Compiling the project requires a compiler that can compile C++26. For reference, GCC 14 and above should work.
+Some example code that instantiates different `Vector<T>` has been included in `main.cpp`. The code written in lecture can be found in `Vector.h` and `Vector.cpp`.
 
-To compile this code, run:
-
-```sh
-g++ -std=c++26 main.cpp soundex-ranges.cpp soundex.cpp -o main
-```
-
-Pass the `-O3` flag to compile the code with all optimizations enabled (it will run much faster if you do this).
-
-To run the code, use:
+To compile this you can use the following command:
 
 ```sh
-./main [soundex] [soundexRanges]
+g++ -std=c++20 main.cpp -o main
 ```
-
-Where `soundex` will run the standard STL algorithm and `soundexRanges` will run the STL ranges/views algorithm. You can specify both to run them side by side!

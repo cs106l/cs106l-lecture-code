@@ -1,12 +1,7 @@
-# Lecture 13
+# Operator Overloading Lecture Code
 
-Move Semantics
-
-This project showcases the difference in performance between code that uses move semantics and code which does not. By default, move semantics operations for the `Photo` class are disabled. To enable them and see the difference in performance, run `cmake` like so:
+## Compiling Instructions
 
 ```sh
-cmake .. -DENABLE_MOVE_SEMANTICS=1
+g++ -std=c++20 main.cpp src/StanfordID.cpp -o main
 ```
-
-
-

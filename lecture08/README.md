@@ -1,9 +1,9 @@
-# Lecture 8: Template Classes and Const Correctness
+# Lecture 7: Classes
 
-Some example code that instantiates different `Vector<T>` has been included in `main.cpp`. The code written in lecture can be found in `Vector.h` and `Vector.cpp`.
+You can take a look at the driver code in `main.cpp`. 
 
 To compile this you can use the following command:
 
 ```sh
-g++ -std=c++20 main.cpp -o main
+g++ -std=c++20 main.cpp StudentID.cpp IntVector.cpp -o main
 ```
