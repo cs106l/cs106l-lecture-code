@@ -47,8 +47,8 @@ bool StanfordID::operator!=(const StanfordID& other) const {
     return !(idNumber == other.idNumber);
 }
 
-
-void StanfordID::operator@(const StanfordID& other) const {
+void StanfordID::operator%(const StanfordID& other) const {
+// void StanfordID::operator(const StanfordID& other) const {
     std::cout << "It works!" << std::endl;
 }
 /* End member operators */

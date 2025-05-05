@@ -1,0 +1,3 @@
+/media/bruce/2nd/cs106l-lecture-code/lecture15/CMakeFiles/main.dir
+/media/bruce/2nd/cs106l-lecture-code/lecture15/CMakeFiles/edit_cache.dir
+/media/bruce/2nd/cs106l-lecture-code/lecture15/CMakeFiles/rebuild_cache.dir
