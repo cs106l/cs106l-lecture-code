@@ -6,8 +6,6 @@ This project showcases the difference in performance between code that uses move
 
 ```sh
 cmake .. -DENABLE_MOVE_SEMANTICS=1
-
-make
 ```
 
 

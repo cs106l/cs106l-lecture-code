@@ -10,7 +10,6 @@
  * 'WITH_REF' is truthy. 
  */
 #if WITH_REF
-// void squareN(int& n) 
 void squareN(int& n) 
 #else
 void squareN(int n)
@@ -23,8 +22,7 @@ void squareN(int n)
 int main() {
 	int num = 5;
 	std::cout << "(1) num is: " << num << std::endl;
-	// squareN(5);
-	squareN(num);
+	squareN(5);
 	std::cout << "(2) num is " << num << std::endl;
 	return 0;
 }

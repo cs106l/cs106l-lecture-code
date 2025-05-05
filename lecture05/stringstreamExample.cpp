@@ -14,9 +14,6 @@ void foo() {
     std::string first;
     std::string last;
     std::string language, extracted_quote;
-    // std::cout << language;
-    // std::cout << extracted_quote;
-
         ss >> first >> last >> language;
         std::getline(ss, extracted_quote);
     std::cout << first << " " << last << " said this: \'" << language << " " << extracted_quote + "‘" << std::endl;
