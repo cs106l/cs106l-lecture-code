@@ -48,9 +48,15 @@ bool StanfordID::operator!=(const StanfordID& other) const {
 }
 
 
-void StanfordID::operator@(const StanfordID& other) const {
-    std::cout << "It works!" << std::endl;
-}
+/**
+ * Some operators cannot be overloaded:
+ * For example, there is no `operator@`, so it can't be overloaded
+ */
+
+// void StanfordID::operator@(const StanfordID& other) const {
+//     std::cout << "It works!" << std::endl;
+// }
+
 /* End member operators */
 
 
