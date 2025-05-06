@@ -1,4 +1,4 @@
-# Lecture 9: Template Functions
+# Lecture 11: Template Functions
 
 To compile this you can use the following command:
 
