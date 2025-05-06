@@ -2,6 +2,7 @@
 #include <functional>
 #include <cmath>
 #include <utility>
+#include <chrono>
 
 class Photo {
 public:
