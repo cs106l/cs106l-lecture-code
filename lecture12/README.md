@@ -1,4 +1,4 @@
-# Lecture 10: Functions and Lambdas
+# Lecture 12: Functions and Lambdas
 
 > [!IMPORTANT]
 > Compiling the project requires a compiler that can compile C++26. For reference, GCC 14 and above should work.
