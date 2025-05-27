@@ -1,4 +1,4 @@
-# Lecture 15: RAII & Building Projects
+# Lecture 17: RAII & Building Projects
 
 You can take a look at the driver code in `main.cpp`. 
 
