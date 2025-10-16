@@ -54,11 +54,7 @@ public:
     }
 };
 
-int main() {
-    /*Player player;
-    Tree tree;
-    Projectile proj;*/
-    
+int main() {    
 	std::vector<Entity> entities { Player(), Tree(), Projectile() };
 	while (true) {
         std::cout << "Rendering frame..." << std::endl;
