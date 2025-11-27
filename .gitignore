@@ -3,3 +3,4 @@ build
 main
 main.exe
 */.vscode
+.DS_Store
