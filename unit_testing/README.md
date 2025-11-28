@@ -19,7 +19,7 @@ mkdir build
 cd build
 ```
 
-
+Just to be transparent, running the following command will download a version of the Google Test project into the `build` directory. If you do not want this to be automatically done or want a newer version of the Google Test project, remove the `FetchContent` from the `CMakeLists.txt` file, download the project manually, and reconfigure the `CMakeLists.txt` to work with the manually downloaded project.
 ```sh
 cmake ..
 ```
