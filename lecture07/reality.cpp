@@ -1,10 +1,10 @@
-/* File: virtuality.cpp
+/* File: reality.cpp
  * Author: Preston Seay
  *
- * This file demonstrates how the virtual keyword works,
- * as well as showing slicing (a form of narrowing conversion).
+ * This file demonstrates how code works without the virtual keyword,
+ * showing slicing (a form of narrowing conversion).
  * 
- * In reality, you'd want to define these in .h files, but
+ * In the real world, you'd want to define these in .h files, but
  * for this example, I wanted them all to be in one file
  * so you can easily see them.
  */
@@ -16,20 +16,20 @@ using namespace std;
 // and B has ints a and b, and C has ints a, b, and c.
 struct A {
     int a;
-    virtual void print() { cout << "A: " << a << endl; }
-    A(int a): a(a) {}
-    A(): a(0) {}
+    void print() { cout << "A: " << a << endl; }
 };
 struct B : A { // Structs inherit public by default.
     int b;
-    B(int a, int b): b(b) {this->a = a;}
-    void print() override { cout << "B: " << a << ", " << b << endl; }
+    void print() { cout << "B: " << a << ", " << b << endl; }
 };
 class C : B { // Classes inherit private by default.
     int c; // Fields default to private too.
 public:
-    C(int c): B(c - 2, c - 1), c(c) {}
-    void print() override { cout << "C: " << a << ", " << b << ", " << c << endl; }
+    C(int c): c(c) {
+        a = c - 2;
+        b = c - 1;
+    }
+    void print() { cout << "C: " << a << ", " << b << ", " << c << endl; }
 };
 
 int main() {
@@ -59,10 +59,23 @@ int main() {
     //// Sizing... ////
     cout << endl << "-- Sizing" << endl;
 
-    // You can now see these are larger, to hold a pointer to a vtable.
+    // [4 bytes of a]
     cout << "A is " << sizeof(A) << " bytes" << endl;
+    // [4 bytes of a, 4 bytes of b]
     cout << "B is " << sizeof(B) << " bytes" << endl;
+    // [4 bytes of a, 4 bytes of b, 4 bytes of c]
     cout << "C is " << sizeof(C) << " bytes" << endl;
+
+    //// Access to private variables... ////
+    cout << endl << "-- Memory" << endl;
+
+    cout << "C before:" << endl;
+    c.print();
+    int* cAddress = (int*) &c;
+    cAddress[0] = 10;
+    cAddress[1] = 6;
+    cout << "C after:" << endl;
+    c.print();
 
     return 0;
 }
