@@ -1,4 +1,4 @@
-/* File: virtual-simple.cpp
+/* File: virtual-functions.cpp
  * Author: Preston Seay
  * 
  * This file demonstrates the simple properties of virtual.
