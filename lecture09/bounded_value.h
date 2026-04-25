@@ -1,4 +1,4 @@
-/* File: bounded_value.cpp
+/* File: bounded_value.h
  * Author: Preston Seay
  *
  * This file defines the functionality of the bounded value template class.
