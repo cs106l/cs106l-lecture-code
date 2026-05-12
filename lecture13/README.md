@@ -1,7 +1,7 @@
-# Operator Overloading Lecture Code
+# Dragon Special Member Functions
 
-## Compiling Instructions
+You can compile and run your code using:
 
 ```sh
-g++ -std=c++20 main.cpp src/StanfordID.cpp -o main
+g++ -std=c++20 pirate.cpp -o pirate
 ```
