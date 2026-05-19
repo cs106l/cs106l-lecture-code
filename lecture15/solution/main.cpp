@@ -38,22 +38,19 @@ public:
         return _value;
     }
 
-    template <typename U>
-    T value_or(U&& fallback) const {
+    T value_or(T&& fallback) const {
         if (_hasValue) {
             return _value;
         }
-        return static_cast<T>(std::forward<U>(fallback));
+        return fallback;
     }
 
     template <typename F>
     auto transform(F&& f) const {
-        using Result = std::invoke_result_t<F, T>;
-
         if (_hasValue) {
-            return MyOptional<Result>(f(_value));
+            return MyOptional<decltype(f(_value))>(f(_value));
         }
-        return MyOptional<Result>();
+        return MyOptional<decltype(f(_value))>();
     }
 };
 
